@@ -13,10 +13,11 @@ public class Enigma {
 	public Enigma(RotorList chosenRotors, String txtFileName) {
 		this.firstRotor = chosenRotors;
 		this.phrase = TextConvertor.convertToQueue(txtFileName);
+		System.out.println(this.phrase);
 	}
 	
 	// currently, rather than using the text convertor to write to a txt, encryptor just prints out the cipher.
-	public void encryptor() {
+	public char[] encryptor() {
 		char[] cipher = new char[this.phrase.size()];
 		int counter = 0;
 		while (!phrase.isEmpty()) {
@@ -24,7 +25,7 @@ public class Enigma {
 			counter++;
 		}
 		
-		System.out.println(cipher.toString());
+		return cipher;
 	}
 	
 	private char encryptorHelper(char currChar, RotorList currRotorList) {

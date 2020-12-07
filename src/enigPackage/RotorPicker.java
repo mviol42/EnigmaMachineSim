@@ -62,16 +62,12 @@ public class RotorPicker {
 				System.out.println();
 				
 				if ((chosenRotor > -1 && chosenRotor < 5) && (rotorPos > -1 && rotorPos < 25)) {
-					// front of list
 					if (i == 0) {
 						this.chosenRotors = new RotorList(new Rotor(allRotors.get(chosenRotor), rotorPos));
 						this.firstRotor = this.chosenRotors;
 					}
-					// anywhere else in the list
 					else {
-						this.chosenRotors.next = new RotorList(new Rotor(allRotors.get(chosenRotor), rotorPos));
-						this.chosenRotors.next.previous = this.chosenRotors;
-						this.chosenRotors = this.chosenRotors.next;
+						this.chosenRotors.addNext(new Rotor(allRotors.get(chosenRotor), rotorPos));
 					}
 					
 					tempRotorsArr.add(chosenRotor);

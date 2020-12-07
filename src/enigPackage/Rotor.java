@@ -34,17 +34,47 @@ public class Rotor {
 	}
 	
 	public char forwardEncryptChar(char currChar) {
-		char encryptedChar = this.wiring.get((int) currChar - ((int) 'a' - this.position));
+//		System.out.println("a: " + (int) 'a');
+//		System.out.println("position: " + this.position);
+//		System.out.println("a - position: " + ((int) 'a' - this.position));
+//		System.out.println("currChar: " + currChar);
+//		System.out.println((int) currChar - ((int) 'a' - this.position));
+//		System.out.println("new maths: " + (((int) currChar - (int) 'a') + this.position));
+		int adjustedPos = ((int) currChar - (int) 'a') + this.position;
+		char encryptedChar;
+		
+		if (adjustedPos < 26) {
+			encryptedChar = this.wiring.get(adjustedPos);
+		}
+		else {
+			encryptedChar = this.wiring.get(adjustedPos - 26);
+		}
+		
 		return encryptedChar;
 	}
 	
 	public char backwardEncryptChar(char currChar) {
-		char encryptedChar = (char) (this.wiring.indexOf(currChar) + ((int) 'a' - this.position));
+//		char encryptedChar = (char) (this.wiring.indexOf(currChar) + ((int) 'a' + this.position));
+		int adjustedPos = this.wiring.indexOf(currChar) + this.position;
+		char encryptedChar;
+		
+		if (adjustedPos < 26) {
+			encryptedChar = this.wiring.get(adjustedPos);
+		}
+		else {
+			encryptedChar = this.wiring.get(adjustedPos - 26);
+		}
+		
 		return encryptedChar;
 	}
 	
 	public int rotate() {
-		this.position++;
+		if (this.position < 25) {
+			this.position++;
+		}
+		else {
+			this.position = 0;
+		}
 		return this.position;
 	}
 	

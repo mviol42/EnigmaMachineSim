@@ -5,8 +5,7 @@
 
 package enigPackage;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class EnigmaK_GUI {
 	// https://en.wikipedia.org/wiki/Enigma_rotor_details
@@ -197,12 +196,8 @@ public class EnigmaK_GUI {
 			if (inputter.hasNextInt()) {
 				rotorPicker.setRotorsAmount(inputter.nextInt());
 			}
-//			System.out.println("rotorPicker: " + rotorPicker.getRotorsAmount());
-//			
+	
 			looper = rotorPicker.getRotorsAmount();
-//			System.out.println(looper);
-//			looper = 2;
-//			System.out.println(looper);
 			if (looper == -1) {
 				System.out.println("Please choose an amount between 1-" + allRotors.size() + ".");
 			}
@@ -210,7 +205,12 @@ public class EnigmaK_GUI {
 		
 		System.out.println();
 		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), "TEMP FILE NAME");
-		myEnigma.encryptor();
+		
+		System.out.println("Printing: ");
+		char[] cipher = myEnigma.encryptor();
+		for (char currChar : cipher) {
+			System.out.print(currChar);
+		}
 		inputter.close();
 	}
 }
