@@ -13,14 +13,15 @@ public class TextConvertor {
 	public static Queue<Character> convertToQueue(String txtFileName) {
 		Queue<Character> baseText = new LinkedList<Character>();
 		String strText = "Hello World";
+//		String strText = "cncjpgdbrn";
 		
 		for (int i = 0; i < strText.length(); i++) {
 			char currChar = strText.toLowerCase().charAt(i);
-			if (currChar > 96 && currChar < 123) {
+			if (currChar >= (int) 'a' && currChar <= (int) 'z') {
 				baseText.add(currChar);
 			}
 		}
-		
+
 		return baseText;
 	}
 }
