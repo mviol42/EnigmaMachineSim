@@ -10,48 +10,18 @@ import java.util.*;
 public class EnigmaK_GUI {
 	// https://en.wikipedia.org/wiki/Enigma_rotor_details
 	// https://www.cryptomuseum.com/crypto/enigma/wiring.htm
+	// http://www.xat.nl/enigma/manual/5.htm
+    // http://users.telenet.be/d.rijmenants/en/enigmatech.htm#wiringdiagram
 	//     These links has specific rotor info.
 	//
 	// Wiring used here is based on the wiring of Enigma K.
 	public static void main(String[] args) {
 		// For the orders below: 0 = a, etc.
 		// ABCDEFGHIJKLMNOPQRSTUVWXYZ 
-		//
-		// Rotor ETW aka 00:
-		// QWERTZUIOASDFGHJKPYXCVBNML
-		ArrayList<Character> rotorArrList_00 = new ArrayList<Character>()
-		{{
-			add('q');
-			add('w');
-			add('e');
-			add('r');
-			add('t');
-			add('z');
-			add('u');
-			add('i');
-			add('o');
-			add('a');
-			add('s');
-			add('d');
-			add('f');
-			add('g');
-			add('h');
-			add('j');
-			add('k');
-			add('p');
-			add('y');
-			add('x');
-			add('c');
-			add('v');
-			add('b');
-			add('n');
-			add('m');
-			add('l');
-		}};
-		
+		//		
 		// Rotor I aka 01:
 		// LPGSZMHAEOQKVXRFYBUTNICJDW 
-		ArrayList<Character> rotorArrList_01 = new ArrayList<Character>()
+		ArrayList<Character> rotorArrList_00 = new ArrayList<Character>()
 		{{
 			add('l');
 			add('p');
@@ -83,7 +53,7 @@ public class EnigmaK_GUI {
 		
 		// Rotor II aka 02:
 		// SLVGBTFXJQOHEWIRZYAMKPCNDU  
-		ArrayList<Character> rotorArrList_02 = new ArrayList<Character>()
+		ArrayList<Character> rotorArrList_01 = new ArrayList<Character>()
 		{{
 			add('s');
 			add('l');
@@ -115,7 +85,7 @@ public class EnigmaK_GUI {
 
 		// Rotor III aka 03:
 		// CJGDPSHKTURAWZXFMYNQOBVLIE 
-		ArrayList<Character> rotorArrList_03 = new ArrayList<Character>()
+		ArrayList<Character> rotorArrList_02 = new ArrayList<Character>()
 		{{
 			add('c');
 			add('j');
@@ -145,9 +115,41 @@ public class EnigmaK_GUI {
 			add('e');
 		}};
 		
-		// Rotor UKW aka 04:
+		// ETW aka Entry Wheel:
+		// QWERTZUIOASDFGHJKPYXCVBNML
+		ArrayList<Character> ETW = new ArrayList<Character>()
+		{{
+			add('q'); // a
+			add('w'); // b
+			add('e'); // c
+			add('r'); // d
+			add('t'); // e
+			add('z'); // f
+			add('u'); // g
+			add('i'); // h
+			add('o'); // i
+			add('a'); // j
+			add('s'); // k
+			add('d'); // l
+			add('f'); // m
+			add('g'); // n
+			add('h'); // o
+			add('j'); // p
+			add('k'); // q
+			add('p'); // r
+			add('y'); // s
+			add('x'); // t
+			add('c'); // u
+			add('v'); // v
+			add('b'); // w
+			add('n'); // x
+			add('m'); // y
+			add('l'); // z
+		}};
+		
+		// UKW aka Reflector:
 		// IMETCGFRAYSQBZXWLHKDVUPOJN 
-		ArrayList<Character> rotorArrList_04 = new ArrayList<Character>()
+		ArrayList<Character> UKW = new ArrayList<Character>()
 		{{
 			add('i');
 			add('m');
@@ -182,9 +184,8 @@ public class EnigmaK_GUI {
 			add(rotorArrList_00);
 			add(rotorArrList_01);
 			add(rotorArrList_02);
-			add(rotorArrList_03);
-			add(rotorArrList_04);
 		}};
+		Rotor reflector = new Rotor(UKW, -1);
 		
 		RotorPicker rotorPicker = new RotorPicker();
 		rotorPicker.setAllRotors(allRotors);
@@ -203,8 +204,19 @@ public class EnigmaK_GUI {
 			}
 		}
 		
+		while (reflector.getPosition() < 0) {
+			System.out.print("Input the reflector position (1-26): ");
+			if (inputter.hasNextInt()) {
+				reflector.setPosition(inputter.nextInt() - 1);
+			}
+			
+			if (reflector.getPosition() < 0) {
+				System.out.println("Please choose a position between 1-26.");
+			}
+		}
+		
 		System.out.println();
-		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), "TEMP FILE NAME");
+		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), "TEMP FILE NAME", reflector, new Rotor(ETW, 0));
 		
 		System.out.println("Printing: ");
 		char[] cipher = myEnigma.encryptor();

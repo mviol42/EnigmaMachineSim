@@ -9,10 +9,12 @@ import java.util.*;
 public class Rotor {
 	private ArrayList<Character> wiring;
 	private int position;
+	private boolean justRotated;
 	
 	public Rotor(ArrayList<Character> wiring, int position) {
 		this.wiring = wiring;
 		this.position = position;
+		this.justRotated = false;
 	}
 	
 	public ArrayList<Character> getRotorMap() {
@@ -65,6 +67,7 @@ public class Rotor {
 			encryptedChar = this.wiring.get(adjustedPos - 26);
 		}
 		
+		this.justRotated = true;
 		return encryptedChar;
 	}
 	
@@ -75,7 +78,17 @@ public class Rotor {
 		else {
 			this.position = 0;
 		}
+		
+		this.justRotated = true;
 		return this.position;
+	}
+	
+	public void setJustRotated(boolean rotationState) {
+		this.justRotated = rotationState;
+	}
+	
+	public boolean getJustRotated() {
+		return this.justRotated;
 	}
 	
 }
