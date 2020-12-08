@@ -38,17 +38,17 @@ public class Enigma {
 	}
 	
 	private char encryptorHelper(char currChar, RotorList currRotorList) {
-		currChar = currRotorList.rotor.forwardEncryptChar(currChar);	
+		if (currRotorList.previous == null) {
+			System.out.println("rotated first rotor to" + currRotorList.rotor.getPosition());
+			currRotorList.rotor.rotate();
+		}
+		else if (currRotorList.previous.rotor.getPosition() == 0 && currRotorList.previous.rotor.getJustRotated()) {
+			System.out.println("other rotor rotated");
+			currRotorList.rotor.rotate();
+			currRotorList.previous.rotor.setJustRotated(false);
+		}
 		
-//		if (currRotorList.previous == null) {
-//			System.out.println("rotated first rotor to" + currRotorList.rotor.getPosition());
-//			currRotorList.rotor.rotate();
-//		}
-//		else if (currRotorList.previous.rotor.getPosition() == 0 && currRotorList.previous.rotor.getJustRotated()) {
-//			System.out.println("other rotor rotated");
-//			currRotorList.rotor.rotate();
-//			currRotorList.previous.rotor.setJustRotated(false);
-//		}
+		currChar = currRotorList.rotor.forwardEncryptChar(currChar);	
 		
 		if (currRotorList.next == null) {
 			currChar = reflector.forwardEncryptChar(currChar);

@@ -13,11 +13,7 @@ public class TextConvertor {
 	public static Queue<Character> convertToQueue(String txtFileName) {
 		Queue<Character> baseText = new LinkedList<Character>();
 //		String strText = "Hello World";
-//		String strText = "rutldgoegk";
-//		String strText = "xguuepenuz"; // output if rotation disabled
-		
-//		String strText = "a";
-		String strText = "l";
+		String strText = "oukmdlwuxi";
 		
 		for (int i = 0; i < strText.length(); i++) {
 			char currChar = strText.toLowerCase().charAt(i);

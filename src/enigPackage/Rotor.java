@@ -57,14 +57,14 @@ public class Rotor {
 	
 	public char backwardEncryptChar(char currChar) {
 //		char encryptedChar = (char) (this.wiring.indexOf(currChar) + ((int) 'a' + this.position));
-		int adjustedPos = this.wiring.indexOf(currChar) + this.position;
+		int adjustedPos = this.wiring.indexOf(currChar) - this.position;
 		char encryptedChar;
 		
-		if (adjustedPos < 26) {
-			encryptedChar = this.wiring.get(adjustedPos);
+		if (adjustedPos < 0) {
+			encryptedChar = (char) (adjustedPos + (int) 'a' + 26);
 		}
 		else {
-			encryptedChar = this.wiring.get(adjustedPos - 26);
+			encryptedChar = (char) (adjustedPos + (int) 'a');
 		}
 		
 		this.justRotated = true;
