@@ -5,6 +5,7 @@
 package enigPackage;
 
 import java.util.*;
+import java.io.*;
 
 public class Enigma {
 	private Queue<Character> phrase;
@@ -12,7 +13,7 @@ public class Enigma {
 	private Rotor reflector;
 	private Rotor entryWheel;
 	
-	public Enigma(RotorList chosenRotors, String txtFileName, Rotor reflector, Rotor entryWheel) {
+	public Enigma(RotorList chosenRotors, String txtFileName, Rotor reflector, Rotor entryWheel) throws FileNotFoundException {
 		this.firstRotor = chosenRotors;
 		this.phrase = TextConvertor.convertToQueue(txtFileName);
 		this.reflector = reflector;

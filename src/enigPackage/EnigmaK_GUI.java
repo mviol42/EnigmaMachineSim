@@ -215,20 +215,16 @@ public class EnigmaK_GUI {
 				System.out.println("Please choose a position between 1-26.");
 			}
 		}
-		
+
 		System.out.println();
-<<<<<<< HEAD
-      System.out.print("Input file name: ");
-      String inputFile = inputter.next();
-      System.out.println();
-      System.out.print("output file name: ");
-      String outputFile = inputter.next();
+      	System.out.print("Input file name: ");
+      	String inputFile = inputter.next();
+     	System.out.println();
+      	System.out.print("output file name: ");
+      	String outputFile = inputter.next();
 		PrintStream output = new PrintStream(new File(outputFile));
-		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), inputFile);
-=======
-		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), "TEMP FILE NAME", reflector, new Rotor(ETW, 0));
-		
->>>>>>> 10fddc079abe6cdc480633151a9ecff8229e15ea
+		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), inputFile, reflector, new Rotor(ETW, 0));
+
 		System.out.println("Printing: ");
 		char[] cipher = myEnigma.encryptor();
       for (char currChar : cipher) {
