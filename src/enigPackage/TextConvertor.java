@@ -27,11 +27,16 @@ public class TextConvertor {
 	public static Queue<Character> convertToQueue(String txtFileName) throws FileNotFoundException {
       Scanner input = new Scanner(new File(txtFileName));      
 		Queue<Character> baseText = new LinkedList<Character>();
+<<<<<<< HEAD
 		String strText = "";
       while (input.hasNext()) {
          strText += input.next();
       }
 //		String strText = "cncjpgdbrn";
+=======
+//		String strText = "Hello World";
+		String strText = "oukmdlwuxi";
+>>>>>>> 10fddc079abe6cdc480633151a9ecff8229e15ea
 		
 		for (int i = 0; i < strText.length(); i++) {
 			char currChar = strText.toLowerCase().charAt(i);
