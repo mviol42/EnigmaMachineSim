@@ -5,14 +5,32 @@
 package enigPackage;
 
 import java.util.*;
+import java.io.*;
 
 public class TextConvertor {
-	
-	// TEMP METHOD
-	// This method is temporary to give us a queue for testing. 
-	public static Queue<Character> convertToQueue(String txtFileName) {
+
+   /*
+   private static String fileTest(String txtFileName) throws FileNotFoundException {
+      Scanner console = new Scanner(System.in);
+      File f = new File(txtFileName);
+      String inputFile = txtFileName;  
+      while(!(f.exists())) {
+         System.out.print("File not found. Try again: ");
+         inputFile = console.next();
+         f = new File(inputFile);   
+      }
+      
+      return inputFile;
+      
+   }
+   */
+	public static Queue<Character> convertToQueue(String txtFileName) throws FileNotFoundException {
+      Scanner input = new Scanner(new File(txtFileName));      
 		Queue<Character> baseText = new LinkedList<Character>();
-		String strText = "Hello World";
+		String strText = "";
+      while (input.hasNext()) {
+         strText += input.next();
+      }
 //		String strText = "cncjpgdbrn";
 		
 		for (int i = 0; i < strText.length(); i++) {
@@ -21,7 +39,6 @@ public class TextConvertor {
 				baseText.add(currChar);
 			}
 		}
-
-		return baseText;
+      return baseText;
 	}
 }
