@@ -1,5 +1,4 @@
 import enigPackage.Rotor;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -7,9 +6,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RotorTest {
-
-    @Test
-    public void getAndSetPositionTest() {
+    public static Rotor setup() {
         ArrayList<Character> rotorArrList = new ArrayList<Character>()
         {{
             add('a');
@@ -40,7 +37,11 @@ public class RotorTest {
             add('z');
         }};
 
-        Rotor rotor = new Rotor (rotorArrList, 0);
+        return new Rotor (rotorArrList, 0);
+    }
+    @Test
+    public void testGetAndSetPosition() {
+        Rotor rotor = setup();
         assertEquals(0, rotor.getPosition());
         rotor.setPosition(23);
         assertEquals(23, rotor.getPosition());
@@ -49,38 +50,8 @@ public class RotorTest {
     }
 
     @Test
-    public void forwardEncryptCharTest() {
-        ArrayList<Character> rotorArrList = new ArrayList<Character>()
-        {{
-            add('a');
-            add('b');
-            add('c');
-            add('d');
-            add('e');
-            add('f');
-            add('g');
-            add('h');
-            add('i');
-            add('j');
-            add('k');
-            add('l');
-            add('m');
-            add('n');
-            add('o');
-            add('p');
-            add('q');
-            add('r');
-            add('s');
-            add('t');
-            add('u');
-            add('v');
-            add('w');
-            add('x');
-            add('y');
-            add('z');
-        }};
-
-        Rotor rotor = new Rotor (rotorArrList, 0);
+    public void testForwardEncryptChar() {
+        Rotor rotor = setup();
 
         assertEquals('a', rotor.forwardEncryptChar('a'));
         assertEquals('z', rotor.forwardEncryptChar('z'));
@@ -93,38 +64,8 @@ public class RotorTest {
     }
 
     @Test
-    public void rotateTest() {
-        ArrayList<Character> rotorArrList = new ArrayList<Character>()
-        {{
-            add('a');
-            add('b');
-            add('c');
-            add('d');
-            add('e');
-            add('f');
-            add('g');
-            add('h');
-            add('i');
-            add('j');
-            add('k');
-            add('l');
-            add('m');
-            add('n');
-            add('o');
-            add('p');
-            add('q');
-            add('r');
-            add('s');
-            add('t');
-            add('u');
-            add('v');
-            add('w');
-            add('x');
-            add('y');
-            add('z');
-        }};
-
-        Rotor rotor = new Rotor (rotorArrList, 0);
+    public void testRotate() {
+        Rotor rotor = setup();
 
         assertEquals(1, rotor.rotate());
         assertEquals(2, rotor.rotate());
@@ -135,38 +76,8 @@ public class RotorTest {
     }
 
     @Test
-    public void backwardBasicTest() {
-        ArrayList<Character> rotorArrList = new ArrayList<Character>()
-        {{
-            add('a');
-            add('b');
-            add('c');
-            add('d');
-            add('e');
-            add('f');
-            add('g');
-            add('h');
-            add('i');
-            add('j');
-            add('k');
-            add('l');
-            add('m');
-            add('n');
-            add('o');
-            add('p');
-            add('q');
-            add('r');
-            add('s');
-            add('t');
-            add('u');
-            add('v');
-            add('w');
-            add('x');
-            add('y');
-            add('z');
-        }};
-
-        Rotor rotor = new Rotor (rotorArrList, 0);
+    public void testBackwardBasic() {
+        Rotor rotor = setup();
         assertEquals('a', rotor.backwardEncryptChar('a'));
 
         rotor.setPosition(1);
@@ -179,73 +90,14 @@ public class RotorTest {
     }
 
     @Test
-    public void backwardsEdgeCaseTest() {
-        ArrayList<Character> rotorArrList = new ArrayList<Character>()
-        {{
-            add('a');
-            add('b');
-            add('c');
-            add('d');
-            add('e');
-            add('f');
-            add('g');
-            add('h');
-            add('i');
-            add('j');
-            add('k');
-            add('l');
-            add('m');
-            add('n');
-            add('o');
-            add('p');
-            add('q');
-            add('r');
-            add('s');
-            add('t');
-            add('u');
-            add('v');
-            add('w');
-            add('x');
-            add('y');
-            add('z');
-        }};
-
-        Rotor rotor = new Rotor (rotorArrList, 1);
+    public void testBackwardsEdgeCase() {
+        Rotor rotor = setup();
+        rotor.setPosition(1);
         assertEquals('z', rotor.backwardEncryptChar('a'));
     }
 
     @Test
-    public void backwardsTwoRotorTest() {
-        ArrayList<Character> rotorArrList_0 = new ArrayList<Character>()
-        {{
-            add('a');
-            add('b');
-            add('c');
-            add('d');
-            add('e');
-            add('f');
-            add('g');
-            add('h');
-            add('i');
-            add('j');
-            add('k');
-            add('l');
-            add('m');
-            add('n');
-            add('o');
-            add('p');
-            add('q');
-            add('r');
-            add('s');
-            add('t');
-            add('u');
-            add('v');
-            add('w');
-            add('x');
-            add('y');
-            add('z');
-        }};
-
+    public void testBackwardsTwoRotor() {
         ArrayList<Character> rotorArrList_1 = new ArrayList<Character>()
         {{
             add('c');
@@ -276,8 +128,8 @@ public class RotorTest {
             add('e');
         }};
 
-        Rotor rotor0 = new Rotor (rotorArrList_0, 0);
-        Rotor rotor1 = new Rotor (rotorArrList_1, 0);
+        Rotor rotor0 = setup()
+;        Rotor rotor1 = new Rotor (rotorArrList_1, 0);
 
         char throughR1 = rotor1.backwardEncryptChar('c');
         assertEquals('a', rotor0.backwardEncryptChar(throughR1));

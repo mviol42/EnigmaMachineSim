@@ -8,32 +8,13 @@ import java.util.*;
 import java.io.*;
 
 public class TextConvertor {
-
-   /*
-   private static String fileTest(String txtFileName) throws FileNotFoundException {
-      Scanner console = new Scanner(System.in);
-      File f = new File(txtFileName);
-      String inputFile = txtFileName;  
-      while(!(f.exists())) {
-         System.out.print("File not found. Try again: ");
-         inputFile = console.next();
-         f = new File(inputFile);   
-      }
-      
-      return inputFile;
-      
-   }
-   */
 	public static Queue<Character> convertToQueue(String txtFileName) throws FileNotFoundException {
-      Scanner input = new Scanner(new File(txtFileName));      
-		Queue<Character> baseText = new LinkedList<Character>();
+		Scanner input = new Scanner(new File(txtFileName));
+		Queue<Character> baseText = new LinkedList<>();
 		String strText = "";
-      while (input.hasNext()) {
-         strText += input.next();
-      }
-//		String strText = "cncjpgdbrn";
-//		String strText = "Hello World";
-		//String strText = "oukmdlwuxi";
+      	while (input.hasNext()) {
+         	strText += input.next();
+      	}
 		
 		for (int i = 0; i < strText.length(); i++) {
 			char currChar = strText.toLowerCase().charAt(i);
@@ -41,6 +22,6 @@ public class TextConvertor {
 				baseText.add(currChar);
 			}
 		}
-      return baseText;
+		return baseText;
 	}
 }
