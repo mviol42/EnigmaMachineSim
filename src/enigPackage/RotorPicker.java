@@ -12,8 +12,7 @@ public class RotorPicker {
 	private RotorList chosenRotors;
 	private RotorList firstRotor;
 	
-	public RotorPicker() {
-	}
+	public RotorPicker() {}
 	
 	public void setRotorsAmount(int rotorsAmount) {
 		if (rotorsAmount > 0 && rotorsAmount < 6) {
