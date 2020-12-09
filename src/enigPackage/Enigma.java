@@ -35,8 +35,6 @@ public class Enigma {
 		char[] cipher = new char[this.phrase.size()];
 		int counter = 0;
 		while (!phrase.isEmpty()) {
-//			cipher[counter] = encryptorHelper(this.phrase.remove(), this.firstRotor);
-
 			char currChar = this.entryWheel.forwardEncryptChar(this.phrase.remove());
 			currChar = encryptorHelper(currChar, this.firstRotor);
 			cipher[counter] =  this.entryWheel.backwardEncryptChar(currChar);
@@ -46,14 +44,14 @@ public class Enigma {
 		
 		return cipher;
 	}
+
 	// A helper method for encryptor that recursively passes a character currChar through all the rotors and reflector
 	// of a given Enigma and handles rotor position rotations for all 3 main rotors.
 	private char encryptorHelper(char currChar, RotorList currRotorList) {
 		if (currRotorList.previous == null) {
 			System.out.println("rotated first rotor to" + currRotorList.rotor.getPosition());
 			currRotorList.rotor.rotate();
-		}
-		else if (currRotorList.previous.rotor.getPosition() == 0 && currRotorList.previous.rotor.getJustRotated()) {
+		} else if (currRotorList.previous.rotor.getPosition() == 0 && currRotorList.previous.rotor.getJustRotated()) {
 			System.out.println("other rotor rotated");
 			currRotorList.rotor.rotate();
 			currRotorList.previous.rotor.setJustRotated(false);
@@ -63,8 +61,7 @@ public class Enigma {
 		
 		if (currRotorList.next == null) {
 			currChar = reflector.forwardEncryptChar(currChar);
-		}
-		else {
+		} else {
 			currChar = encryptorHelper(currChar, currRotorList.next);
 		}
 		

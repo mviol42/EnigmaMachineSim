@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3c02241-0086-4edd-b1e0-67e00166c66c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/Enigma.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/enigPackage/Enigma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enigPackage/Enigma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/Rotor.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/enigPackage/Rotor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enigPackage/Rotor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/RotorList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/RotorList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enigPackage/RotorList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/RotorPicker.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/enigPackage/RotorPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enigPackage/RotorPicker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/TextConvertor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enigPackage/TextConvertor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enigPackage/TextConvertor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EnigmaK_GUITest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/EnigmaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/EnigmaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/RotorListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/RotorListTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/RotorPickerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/RotorPickerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,12 +22,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/TextConverterTest.java">
+        <entry file="file://$PROJECT_DIR$/test/RotorPickerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="60" lean-forward="true" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+            <state relative-caret-position="221">
+              <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/enigPackage/RotorPicker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#2377#0" expanded="true" />
+                <element signature="e#882#891#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,13 +58,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/enigPackage/Enigma.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+            <state relative-caret-position="731">
+              <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
               <folding>
-                <element signature="e#0#5407#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -78,12 +71,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/enigPackage/Enigma.java">
+        <entry file="file://$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+            <state relative-caret-position="-153">
+              <caret line="202" column="50" lean-forward="true" selection-start-line="202" selection-start-column="50" selection-end-line="202" selection-end-column="50" />
               <folding>
-                <element signature="e#0#2310#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -94,9 +86,8 @@
         <entry file="file://$PROJECT_DIR$/src/enigPackage/TextConvertor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+              <caret line="14" column="51" lean-forward="true" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
               <folding>
-                <element signature="e#0#872#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -106,45 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/enigPackage/Rotor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-272">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="e#0#2955#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/RotorListTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="83" column="44" selection-start-line="83" selection-start-column="44" selection-end-line="83" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/RotorPickerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/enigPackage/RotorPicker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#2265#0" expanded="true" />
-                <element signature="e#882#891#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -152,11 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/enigPackage/RotorList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="289">
               <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#659#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -193,13 +144,13 @@
         <option value="$PROJECT_DIR$/test/RotorTest.java" />
         <option value="$PROJECT_DIR$/test/EnigmaTest.java" />
         <option value="$PROJECT_DIR$/test/RotorListTest.java" />
-        <option value="$PROJECT_DIR$/src/enigPackage/RotorPicker.java" />
-        <option value="$PROJECT_DIR$/test/RotorPickerTest.java" />
-        <option value="$PROJECT_DIR$/src/enigPackage/Enigma.java" />
-        <option value="$PROJECT_DIR$/src/enigPackage/Rotor.java" />
         <option value="$PROJECT_DIR$/src/enigPackage/RotorList.java" />
         <option value="$PROJECT_DIR$/src/enigPackage/TextConvertor.java" />
         <option value="$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI.java" />
+        <option value="$PROJECT_DIR$/test/RotorPickerTest.java" />
+        <option value="$PROJECT_DIR$/src/enigPackage/Enigma.java" />
+        <option value="$PROJECT_DIR$/src/enigPackage/Rotor.java" />
+        <option value="$PROJECT_DIR$/src/enigPackage/RotorPicker.java" />
       </list>
     </option>
   </component>
@@ -289,7 +240,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.EnigmaK_GUI">
+  <component name="RunManager" selected="JUnit.RotorPickerTest">
     <configuration name="EnigmaK_GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="enigPackage.EnigmaK_GUI" />
       <module name="EnigmaMachineSim" />
@@ -322,6 +273,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RotorPickerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EnigmaMachineSim" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RotorPickerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RotorTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EnigmaMachineSim" />
       <option name="PACKAGE_NAME" value="" />
@@ -340,22 +300,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TextConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EnigmaMachineSim" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TextConverterTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RotorPickerTest" />
         <item itemvalue="Application.EnigmaK_GUI" />
         <item itemvalue="JUnit.RotorListTest" />
         <item itemvalue="JUnit.RotorListTest.testConstructor" />
         <item itemvalue="JUnit.RotorTest (1)" />
-        <item itemvalue="JUnit.TextConverterTest" />
       </list>
     </recent_temporary>
   </component>
@@ -373,9 +324,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TextConverterTest - 2020.12.08 at 13h 12m 56s.xml">
-      <configuration name="TextConverterTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TextConverterTest_testLowercase - 2020.12.08 at 13h 13m 16s.xml">
       <configuration name="TextConverterTest.testLowercase" configurationId="JUnit" />
     </history-entry>
@@ -402,6 +350,9 @@
     </history-entry>
     <history-entry file="RotorListTest - 2020.12.08 at 18h 34m 33s.xml">
       <configuration name="RotorListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RotorPickerTest - 2020.12.08 at 22h 52m 02s.xml">
+      <configuration name="RotorPickerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -585,6 +536,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/TextConverterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="60" lean-forward="true" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/RotorListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="83" column="44" selection-start-line="83" selection-start-column="44" selection-end-line="83" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/RotorTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -595,10 +566,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/RotorListTest.java">
+    <entry file="file://$PROJECT_DIR$/test/RotorPickerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="83" column="44" selection-start-line="83" selection-start-column="44" selection-end-line="83" selection-end-column="44" />
+        <state relative-caret-position="221">
+          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -615,19 +586,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/RotorPickerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/enigPackage/Enigma.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+        <state relative-caret-position="-153">
+          <caret line="202" column="50" lean-forward="true" selection-start-line="202" selection-start-column="50" selection-end-line="202" selection-end-column="50" />
           <folding>
-            <element signature="e#0#2310#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -635,63 +598,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/enigPackage/Rotor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#2955#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/enigPackage/RotorPicker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#2265#0" expanded="true" />
-            <element signature="e#882#891#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/enigPackage/RotorList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="289">
           <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#659#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/TextConverterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="60" lean-forward="true" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/enigPackage/TextConvertor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <caret line="14" column="51" lean-forward="true" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
           <folding>
-            <element signature="e#0#872#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/enigPackage/EnigmaK_GUI.java">
+    <entry file="file://$PROJECT_DIR$/src/enigPackage/Enigma.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+        <state relative-caret-position="731">
+          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
           <folding>
-            <element signature="e#0#5407#0" expanded="true" />
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/enigPackage/RotorPicker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#2377#0" expanded="true" />
+            <element signature="e#882#891#0" expanded="true" />
           </folding>
         </state>
       </provider>

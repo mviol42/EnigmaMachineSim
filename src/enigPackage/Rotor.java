@@ -44,8 +44,7 @@ public class Rotor {
 	public void setPosition(int newPosition) {
 		if (newPosition > -1 && newPosition < 26) {
 			this.position = newPosition;
-		}
-		else {
+		} else {
 			this.position = -1;
 		}
 	}
@@ -60,8 +59,7 @@ public class Rotor {
 		
 		if (adjustedPos < 26) {
 			encryptedChar = this.wiring.get(adjustedPos);
-		}
-		else {
+		} else {
 			encryptedChar = this.wiring.get(adjustedPos - 26);
 		}
 		
@@ -76,8 +74,7 @@ public class Rotor {
 		
 		if (adjustedPos < 0) {
 			encryptedChar = (char) (adjustedPos + (int) 'a' + 26);
-		}
-		else {
+		} else {
 			encryptedChar = (char) (adjustedPos + (int) 'a');
 		}
 		
@@ -91,8 +88,7 @@ public class Rotor {
 	public int rotate() {
 		if (this.position < 25) {
 			this.position++;
-		}
-		else {
+		} else {
 			this.position = 0;
 		}
 		
