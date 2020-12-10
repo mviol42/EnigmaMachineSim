@@ -88,6 +88,7 @@ See the following links for more details on Enigma rotors and the Enigma K model
 https://en.wikipedia.org/wiki/Enigma_rotor_details
 https://www.cryptomuseum.com/crypto/enigma/wiring.htm 
 http://users.telenet.be/d.rijmenants/en/enigmatech.htm#wiringdiagram
+https://www.youtube.com/watch?v=G2_Q9FoD-oQ 
 Imports:
 java.util.*
 java.io.*
