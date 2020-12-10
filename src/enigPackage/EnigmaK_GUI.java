@@ -250,9 +250,22 @@ public class EnigmaK_GUI {
 				System.out.println("Please choose a position between 1-" + ALPHABET_SIZE + ".");
 			}
 		}
+<<<<<<< HEAD
+
+		System.out.println();
+      	String inputFile = TextConvertor.inputFileTest(inputter);
+     	System.out.println();
+     	String outputFile = TextConvertor.outputFile(inputter);
+      	System.out.println();
+		PrintStream output = new PrintStream(new File(outputFile));
+		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), inputFile, reflector, new Rotor(ETW, 0));
+
+		System.out.println("Printing: ");
+=======
 		
 		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), inputFile, reflector, new Rotor(ALPHABET_SIZE, ETW, 0));
 		
+>>>>>>> b70bc22333b898487bf254333300ff3d18dad80c
 		char[] cipher = myEnigma.encryptor();
 	    for (char currChar : cipher) {
 	    	output.print(currChar);
