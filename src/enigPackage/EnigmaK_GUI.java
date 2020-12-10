@@ -1,18 +1,19 @@
 // Group 8: Aaron, Matt, Mike
-// EnigmaK_GUI Class v_01
-// Source: Implementation Details Doc v_01.2
+// EnigmaK_GUI Class
+//
 // Description: Temporary front end that replicates Enigma K/Enigma G
-// EnigmaK_GUI is the front-end of Enigma and handles all interaction with users.
+// 		EnigmaK_GUI is the front-end of Enigma and handles all interaction with users.
 // This class creates the wiring for the rotors, entrywheel, and reflector, replicating the wiring
-// in Enigma model K. The class takes the user inputs that defines the order of the rotors as well
-// as their positions, along with the position of the reflector. It also takes the name of the
-// .txt file to be encrypted,
-// and outputs the ciphertext to the output file whose name is defined by the user.
+// 		in Enigma model K. The class takes the user inputs that defines the order of the rotors as 
+// 		well as their positions, along with the position of the reflector. It also takes the name
+// 		of the .txt file to be encrypted,
+// 		and outputs the ciphertext to the output file whose name is defined by the user.
+//
+// These links have specific rotor info:
 // https://en.wikipedia.org/wiki/Enigma_rotor_details
 // https://www.cryptomuseum.com/crypto/enigma/wiring.htm
 // http://www.xat.nl/enigma/manual/5.htm
 // http://users.telenet.be/d.rijmenants/en/enigmatech.htm#wiringdiagram
-//     These links have specific rotor info.
 //
 // Wiring used here is based on the wiring of Enigma K.
 
@@ -25,11 +26,11 @@ public class EnigmaK_GUI {
 	private static final int ALPHABET_SIZE = 26;
 	
 	// Initializes the ArrayList<Character> for all of Enigma K’s wheels,
-	// takes the user input for the order of the rotors and positions for both the rotors and
-	// reflector, takes the user input for both .txt files names (the input file with the
-	// phrase and the output file),
-	// creates the Enigma object for the given rotors and settings, encrypted the phrase,
-	// and outputs the cipher to the new output file.
+	// 		takes the user input for the order of the rotors and positions for both the rotors and
+	// 		reflector, takes the user input for both .txt files names (the input file with the
+	// 		phrase and the output file),
+	// 		creates the Enigma object for the given rotors and settings, encrypted the phrase,
+	// 		and outputs the cipher to the new output file.
 	public static void main(String[] args) throws FileNotFoundException {
 		// For the orders below: 0 = a, etc.
 		// ABCDEFGHIJKLMNOPQRSTUVWXYZ 
@@ -132,7 +133,7 @@ public class EnigmaK_GUI {
 		
 		// ETW aka Entry Wheel:
 		// QWERTZUIOASDFGHJKPYXCVBNML
-		ArrayList<Character> ETW = new ArrayList<	>()
+		ArrayList<Character> ETW = new ArrayList<>()
 		{{
 			add('q'); // a
 			add('w'); // b

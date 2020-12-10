@@ -1,9 +1,8 @@
 // Group 8: Aaron, Matt, Mike
 // RotorPicker Class v_01
-// Source: Implementation Details Doc v_01.2
 
-// The RotorPicker class works with the main method in the GUI to determine the rotors used and their
-// starting positions in any given run.
+// The RotorPicker class works with the main method in the GUI to determine the rotors used and 
+// 		their starting positions in any given run.
 package enigPackage;
 
 import java.util.*;
