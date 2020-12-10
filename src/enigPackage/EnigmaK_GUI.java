@@ -31,6 +31,8 @@ public class EnigmaK_GUI {
 	// 		phrase and the output file),
 	// 		creates the Enigma object for the given rotors and settings, encrypted the phrase,
 	// 		and outputs the cipher to the new output file.
+	//
+	// Throws a FileNotFoundException if the input .txt file does not exist.
 	public static void main(String[] args) throws FileNotFoundException {
 		// For the orders below: 0 = a, etc.
 		// ABCDEFGHIJKLMNOPQRSTUVWXYZ 

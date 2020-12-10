@@ -12,6 +12,8 @@ public class TextConvertor {
 	// Takes a .txt file as a parameter, then it scans its contents, and returns a queue 
 	// 		containing each letter in the file. All letters are converted to lowercase. Spaces, 
 	// 		numbers and symbols are ignored.
+	//
+	// Throws a FileNotFoundException if the input .txt file does not exist.
 	public static Queue<Character> convertToQueue(String txtFileName)
 			throws FileNotFoundException {
 		Scanner input = new Scanner(new File(txtFileName));

@@ -18,6 +18,8 @@ public class Enigma {
 
 	// Creates a new Enigma for the given, user-decided rotors, the name of the
 	// 		.txt file with the  input phrase, and the reflector and entry wheel rotors.
+	//
+	// Throws a FileNotFoundException if the input .txt file does not exist.
 	public Enigma(RotorList chosenRotors, String txtFileName, Rotor reflector, Rotor entryWheel)
 			throws FileNotFoundException {
 		this.firstRotor = chosenRotors;
