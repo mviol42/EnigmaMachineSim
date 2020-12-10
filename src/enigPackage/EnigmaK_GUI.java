@@ -11,7 +11,7 @@
 // https://www.cryptomuseum.com/crypto/enigma/wiring.htm
 // http://www.xat.nl/enigma/manual/5.htm
 // http://users.telenet.be/d.rijmenants/en/enigmatech.htm#wiringdiagram
-//     These links has specific rotor info.
+//     These links have specific rotor info.
 //
 // Wiring used here is based on the wiring of Enigma K.
 

@@ -105,5 +105,4 @@ public class Rotor {
 	public boolean getJustRotated() {
 		return this.justRotated;
 	}
-	
 }

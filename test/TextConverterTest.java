@@ -1,9 +1,7 @@
 import enigPackage.TextConvertor;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
