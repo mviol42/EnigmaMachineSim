@@ -1,16 +1,16 @@
 What did you learn during this project?
   We learned a lot about the function of Enigma and general encryption/ciphertext knowledge.
   We learned how to set up and use GitHub.
-  For a couple of us, this was our first group CS project. This excercise taught us a lot about writing code as a group and dividing tasks.
+  For a couple of us, this was our first group CS project. This exercise taught us a lot about writing code as a group and dividing tasks.
   
 What did you enjoy during this project?
-  While it was difficult, we really enjoyed simulating something that was real and tangible. It was fun to learn about Enigma's intrecicies.
+  While it was difficult, we really enjoyed simulating something that was real and tangible. It was fun to learn about Enigma's intricacies.
   It was also enjoyable to come up with algorithms that represented physical objects.
   
 What did you find challenging or frustrating during this project?
-  Scanning from and writing to files was difficult, and we really struggled with with GitHub (merged conflicts especially!).
+  Scanning from and writing to files was difficult, and we really struggled with GitHub (merged conflicts especially!).
   The Encryptor's recursion was difficult to make work with the rotor rotations.
   
-What did you find particulurly helpful for your learning during this project?
-  The godsend that is Stack Overflow.
+What did you find particularly helpful for your learning during this project?
+  Stack overflow is amazingly useful.
   We really relied on getting help to fill in the blanks for each other (an extra pair of eyes helped to catch small errors that caused major bugs).
