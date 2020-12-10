@@ -21,6 +21,8 @@ import java.util.*;
 import java.io.*;
 
 public class EnigmaK_GUI {
+	private static final int ALPHABET_SIZE = 26;
+	
 	// Initializes the ArrayList<Character> for all of Enigma K’s wheels,
 	// takes the user input for the order of the rotors and positions for both the rotors and reflector,
 	// takes the user input for both .txt files names (the input file with the phrase and the output file),
@@ -196,35 +198,59 @@ public class EnigmaK_GUI {
 			add(rotorArrList_01);
 			add(rotorArrList_02);
 		}};
-		Rotor reflector = new Rotor(UKW, -1);
+		Rotor reflector = new Rotor(ALPHABET_SIZE, UKW, -1);
 		
-		RotorPicker rotorPicker = new RotorPicker();
+		RotorPicker rotorPicker = new RotorPicker(ALPHABET_SIZE, allRotors.size());
 		rotorPicker.setAllRotors(allRotors);
 		Scanner inputter = new Scanner(System.in);
 		
+//		int looper = -1;
+//		while (looper < 0) {
+//			System.out.print("Choose the order of the " + allRotors.size() + " rotors: ");
+//			if (inputter.hasNextInt()) {
+//				rotorPicker.setRotorsAmount(inputter.nextInt());
+//			}
+//	
+//			looper = rotorPicker.getRotorsAmount();
+//			if (looper == -1) {
+//				System.out.println("Please choose an amount between 1-" + allRotors.size() + ".");
+//			}
+//		}
+		
 		int looper = -1;
-		while (looper < 0) {
-			System.out.print("How many rotors are we using out of " + allRotors.size() + " (3 recommended): ");
-			if (inputter.hasNextInt()) {
-				rotorPicker.setRotorsAmount(inputter.nextInt());
-			}
-	
-			looper = rotorPicker.getRotorsAmount();
-			if (looper == -1) {
-				System.out.println("Please choose an amount between 1-" + allRotors.size() + ".");
-			}
-		}
+		String inputFile = "temp";
+		String outputFile = "temp";
+		PrintStream output;
+//		while (looper < 0) {
+			System.out.println("Welcome to Enigma.");
+	      	System.out.print("Input file name: ");
+	      	inputFile = inputter.next();     	
+	      	System.out.print("Output file name: ");
+	      	outputFile = inputter.next();
+	      	
+//	      	if (!inputFile.contains(".txt") || !outputFile.contains(".txt")) {
+	      		System.out.println("Please only use .txt files.");
+//	      	}
+//	      	else {
+				output = new PrintStream(new File(outputFile));
+				looper = 1;
+//	      	}
+	      	
+			System.out.println();
+//		}
+		
 		
 		while (reflector.getPosition() < 0) {
-			System.out.print("Input the reflector position (1-26): ");
+			System.out.print("Input the reflector position (1-" + ALPHABET_SIZE + "): ");
 			if (inputter.hasNextInt()) {
 				reflector.setPosition(inputter.nextInt() - 1);
 			}
 			
 			if (reflector.getPosition() < 0) {
-				System.out.println("Please choose a position between 1-26.");
+				System.out.println("Please choose a position between 1-" + ALPHABET_SIZE + ".");
 			}
 		}
+<<<<<<< HEAD
 
 		System.out.println();
       	String inputFile = TextConvertor.inputFileTest(inputter);
@@ -235,11 +261,16 @@ public class EnigmaK_GUI {
 		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), inputFile, reflector, new Rotor(ETW, 0));
 
 		System.out.println("Printing: ");
+=======
+		
+		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), inputFile, reflector, new Rotor(ALPHABET_SIZE, ETW, 0));
+		
+>>>>>>> b70bc22333b898487bf254333300ff3d18dad80c
 		char[] cipher = myEnigma.encryptor();
-      for (char currChar : cipher) {
-			output.print(currChar);
-		}
-      System.out.println("Printed cipher to " + outputFile);
+	    for (char currChar : cipher) {
+	    	output.print(currChar);
+	    }
+	    System.out.println("Printed cipher to " + outputFile);
 		inputter.close();
 	}
 }

@@ -17,12 +17,14 @@ package enigPackage;
 import java.util.*;
 
 public class Rotor {
+	private static int ALPHABET_SIZE;
 	private ArrayList<Character> wiring;
 	private int position;
 	private boolean justRotated;
 
 	// Constructs a Rotor for the giving wiring and position. justRotated defaults to false
-	public Rotor(ArrayList<Character> wiring, int position) {
+	public Rotor(int alphabetSize, ArrayList<Character> wiring, int position) {
+		ALPHABET_SIZE = alphabetSize;
 		this.wiring = wiring;
 		this.position = position;
 		this.justRotated = false;
@@ -42,7 +44,7 @@ public class Rotor {
 	// the method sets the position to 0 (representing the circular rotor reaching a zero offset).
 	// if an invalid position is entered, it is set to -1
 	public void setPosition(int newPosition) {
-		if (newPosition > -1 && newPosition < 26) {
+		if (newPosition > -1 && newPosition < ALPHABET_SIZE) {
 			this.position = newPosition;
 		} else {
 			this.position = -1;
@@ -57,10 +59,10 @@ public class Rotor {
 		int adjustedPos = ((int) currChar - (int) 'a') + this.position;
 		char encryptedChar;
 		
-		if (adjustedPos < 26) {
+		if (adjustedPos < ALPHABET_SIZE) {
 			encryptedChar = this.wiring.get(adjustedPos);
 		} else {
-			encryptedChar = this.wiring.get(adjustedPos - 26);
+			encryptedChar = this.wiring.get(adjustedPos - ALPHABET_SIZE);
 		}
 		
 		return encryptedChar;
@@ -73,7 +75,7 @@ public class Rotor {
 		char encryptedChar;
 		
 		if (adjustedPos < 0) {
-			encryptedChar = (char) (adjustedPos + (int) 'a' + 26);
+			encryptedChar = (char) (adjustedPos + (int) 'a' + ALPHABET_SIZE);
 		} else {
 			encryptedChar = (char) (adjustedPos + (int) 'a');
 		}
@@ -86,7 +88,7 @@ public class Rotor {
 	// (representing ALPHABET_SIZE where ‘a’ is at index 0), the method sets the position to 0.
 	// Sets boolean justRotated to true.
 	public int rotate() {
-		if (this.position < 25) {
+		if (this.position < (ALPHABET_SIZE - 1)) {
 			this.position++;
 		} else {
 			this.position = 0;
