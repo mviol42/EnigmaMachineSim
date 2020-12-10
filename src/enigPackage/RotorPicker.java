@@ -9,15 +9,14 @@ package enigPackage;
 import java.util.*;
 
 public class RotorPicker {
-	private static int ALPHABET_SIZE;
+	public final static int ALPHABET_SIZE = 26;
 	private int rotorsAmount;
 	private ArrayList<ArrayList<Character>> allRotors;
 	private RotorList chosenRotors;
 	private RotorList firstRotor;
 
 	// Initializes a new rotor picker.
-	public RotorPicker(int alphabetSize, int rotorsAmount) {
-		ALPHABET_SIZE = alphabetSize;
+	public RotorPicker(int rotorsAmount) {
 		this.rotorsAmount = rotorsAmount;
 	}
 
@@ -70,10 +69,10 @@ public class RotorPicker {
 				
 				if ((chosenRotor > -1 && chosenRotor < 5) && (rotorPos > -1 && rotorPos < (ALPHABET_SIZE - 1))) {
 					if (i == 0) {
-						this.chosenRotors = new RotorList(new Rotor(ALPHABET_SIZE, allRotors.get(chosenRotor), rotorPos));
+						this.chosenRotors = new RotorList(new Rotor(allRotors.get(chosenRotor), rotorPos));
 						this.firstRotor = this.chosenRotors;
 					} else {
-						this.chosenRotors.addNext(new Rotor(ALPHABET_SIZE, allRotors.get(chosenRotor), rotorPos));
+						this.chosenRotors.addNext(new Rotor(allRotors.get(chosenRotor), rotorPos));
 					}
 					
 					tempRotorsArr.add(chosenRotor);

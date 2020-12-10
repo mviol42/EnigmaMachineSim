@@ -17,14 +17,13 @@ package enigPackage;
 import java.util.*;
 
 public class Rotor {
-	private static int ALPHABET_SIZE;
+	public static final int ALPHABET_SIZE = 26;
 	private ArrayList<Character> wiring;
 	private int position;
 	private boolean justRotated;
 
 	// Constructs a Rotor for the giving wiring and position. justRotated defaults to false
-	public Rotor(int alphabetSize, ArrayList<Character> wiring, int position) {
-		ALPHABET_SIZE = alphabetSize;
+	public Rotor(ArrayList<Character> wiring, int position) {
 		this.wiring = wiring;
 		this.position = position;
 		this.justRotated = false;

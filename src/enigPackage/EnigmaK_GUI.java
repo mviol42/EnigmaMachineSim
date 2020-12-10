@@ -198,48 +198,17 @@ public class EnigmaK_GUI {
 			add(rotorArrList_01);
 			add(rotorArrList_02);
 		}};
-		Rotor reflector = new Rotor(ALPHABET_SIZE, UKW, -1);
+		Rotor reflector = new Rotor(UKW, -1);
 		
-		RotorPicker rotorPicker = new RotorPicker(ALPHABET_SIZE, allRotors.size());
+		RotorPicker rotorPicker = new RotorPicker(allRotors.size());
 		rotorPicker.setAllRotors(allRotors);
 		Scanner inputter = new Scanner(System.in);
-		
-//		int looper = -1;
-//		while (looper < 0) {
-//			System.out.print("Choose the order of the " + allRotors.size() + " rotors: ");
-//			if (inputter.hasNextInt()) {
-//				rotorPicker.setRotorsAmount(inputter.nextInt());
-//			}
-//	
-//			looper = rotorPicker.getRotorsAmount();
-//			if (looper == -1) {
-//				System.out.println("Please choose an amount between 1-" + allRotors.size() + ".");
-//			}
-//		}
-		
-		int looper = -1;
-		String inputFile = "temp";
-		String outputFile = "temp";
-		PrintStream output;
-//		while (looper < 0) {
-			System.out.println("Welcome to Enigma.");
-	      	System.out.print("Input file name: ");
-	      	inputFile = inputter.next();     	
-	      	System.out.print("Output file name: ");
-	      	outputFile = inputter.next();
-	      	
-//	      	if (!inputFile.contains(".txt") || !outputFile.contains(".txt")) {
-	      		System.out.println("Please only use .txt files.");
-//	      	}
-//	      	else {
-				output = new PrintStream(new File(outputFile));
-				looper = 1;
-//	      	}
-	      	
-			System.out.println();
-//		}
-		
-		
+
+		System.out.println("Welcome to Enigma.");
+		String inputFile = TextConvertor.inputFileTest(inputter);
+		System.out.println();
+		PrintStream output = new PrintStream(new File("src/resources/output.txt"));
+
 		while (reflector.getPosition() < 0) {
 			System.out.print("Input the reflector position (1-" + ALPHABET_SIZE + "): ");
 			if (inputter.hasNextInt()) {
@@ -250,27 +219,14 @@ public class EnigmaK_GUI {
 				System.out.println("Please choose a position between 1-" + ALPHABET_SIZE + ".");
 			}
 		}
-<<<<<<< HEAD
-
-		System.out.println();
-      	String inputFile = TextConvertor.inputFileTest(inputter);
-     	System.out.println();
-     	String outputFile = TextConvertor.outputFile(inputter);
-      	System.out.println();
-		PrintStream output = new PrintStream(new File(outputFile));
+		
 		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), inputFile, reflector, new Rotor(ETW, 0));
 
-		System.out.println("Printing: ");
-=======
-		
-		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), inputFile, reflector, new Rotor(ALPHABET_SIZE, ETW, 0));
-		
->>>>>>> b70bc22333b898487bf254333300ff3d18dad80c
 		char[] cipher = myEnigma.encryptor();
 	    for (char currChar : cipher) {
 	    	output.print(currChar);
 	    }
-	    System.out.println("Printed cipher to " + outputFile);
+	    System.out.println("Printed cipher to src/resources/output.txt");
 		inputter.close();
 	}
 }

@@ -32,7 +32,7 @@ public class TextConvertor {
 	// This method takes a Scanner as a parameter and asks for the .txt file that the user would like 
 	// to encrypt. If the file does not exist then they will be asked to enter a different file. Once
 	// a usable file  is found then a string of the file name is returned.
-	public static String inputFileTest(Scanner input) throws FileNotFoundException {
+	public static String inputFileTest(Scanner input) {
 		System.out.print("What is the name of the input file: ");
 		String inputFile = input.next();
 		File temp = new File(inputFile);
@@ -44,12 +44,4 @@ public class TextConvertor {
 			return inputFileTest(input);
 		}
 	}
-	// This method asks the user for the name of the file that the encrypted message will be outputted
-	// to. It is converted into a .txt file and the full file name is returned as a string.
-	public static String outputFile(Scanner input) {
-		System.out.print("What is the name of the output file without the extension: ");
-		String outputFile = input.next() + ".txt";
-		return outputFile;
-	}
-
 }
