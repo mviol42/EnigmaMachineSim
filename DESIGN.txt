@@ -1,0 +1,139 @@
+Aaron Gitell, Matthew Ho, Mike Violette
+December 8, 2020
+Final Project: Enigma
+CSE 143
+
+Enigma Class:
+Class Description (no implementation details):
+Enigma takes a given, user-defined set of rotors where the user chooses the order of the three provided rotors that were used in the enigma model K. These rotors each have a user-defined position. Enigma takes a .txt file and encrypts it with the given rotors, placing the resulting cipher in a new .txt file.
+Imports:
+java.util.*
+java.io.*
+Fields:
+Queue<Character> phrase
+A queue of the given phrase, set to lowercase and only including the 26 characters in the english alphabet (no numbers, spaces, etc.).
+RotorList firstRotor
+The front of the linked list of rotors.
+Rotor Reflector
+The reflector rotor, UKW.
+Rotor entryWheel
+The entry wheel, ETW.
+Methods:
+Enigma(RotorList chosenRotors, String txtFileName, Rotor reflector, Rotor entrywheel)
+Creates a new Enigma for the given, user-decided rotors, the name of the .txt file with the  input phrase, and the reflector and entry wheel rotors.
+char[] encryptor()
+Returns the encrypted cipher from the phrase as a character array. All spaces are removed and the entire array is lowercase. 
+Specifically, this method removes the current character currChar from the queue, runs it through entryWheel, runs it through the recursive helper method which passes the character through the 3 main rotors and reflector, and then runs it back out entryWheel. The character is now encrypted and is added to cipher.
+char encryptorHelper(char currChar, RotorList currRotorList)
+A helper method for encryptor that recursively passes a character currChar through all the rotors and reflector of a given Enigma and handles rotor position rotations for all 3 main rotors.
+
+Rotor Class:
+Class Description (no implementation details):
+Rotor takes a given list that represents the internal wiring for the Rotor and a user-defined position. Each rotor in Enigma can rotate, but does so differently depending on where the given rotor is located in the order of rotors in Enigma. At its most basic, Enigma has a fast, medium, and slow rotor. The fast rotor, the first in the order, rotates on each key press. The medium rotor rotates when the fast rotor reach its turnover position, and the slow rotor rotates when the medium rotor reaches its turnover position.
+The Rotor class also handles the encryption of the current letter, passing the letter either forward or backward through the Rotor’s wiring (depending on where in Enigma’s ‘circuit’ the letter currently is).
+Imports:
+java.util.*
+Fields:
+ALPHABET_SIZE
+A constant variable that represents the size of the alphabet being used.
+ArrayList<Character> wiring
+Represents the scrambled wiring inside of a physical Enigma rotor as an ArrayList where an input character ‘a’ is at index 0, ‘b’ is at index 1, etc. 
+int position
+The current position offset of the given rotor. Position = 0 if there is no offset.
+boolean justRotated
+Is true if the current rotor has rotated. Must be set to false in implementation using the setter.
+Methods:
+Rotor(ArrayList<Character> wiring, int position)
+Constructs a Rotor for the giving wiring and position. justRotoated defaults to false.
+int getPosition()
+Returns position.
+void setPosition(int newPosition)
+Sets the position given a new position. If the inputted position goes above ALPHABET_SIZE, the method sets the position to 0 (representing the circular rotor reaching a zero offset).
+char forwardEncryptChar(char currChar).
+Forward encrypts the given character currChar by setting integer adjustedPos to the index value of currChar plus position (subtracts ascii values from currChar to have a letter in a indexed alphabet where ‘a’ has an index of 0) and sending the resulting adjustedPos through ArrayList wiring.
+char backwardEncryptChar(char currChar)
+Backward encrypts the given character currChar by subtracting position from the index of the current character in ArrayList wiring and sending the resulting integer adjustedPos through wiring.
+int rotate()
+Rotates the rotor by increasing position by 1. If the resulting position exceeds ALPHABET_SIZE - 1 (representing ALPHABET_SIZE where ‘a’ is at index 0), the method sets the position to 0. Sets boolean justRotated to true.
+boolean getJustRotated()
+Returns justRotated.
+void setJustRotated(boolean rotationState)
+Sets justRotated to the given boolean rotationState.
+
+RotorList Class:
+Class Description (no implementation details):
+RotorList is a linked list class for Rotors with a next and previous.
+Imports:
+N/A
+Fields:
+Rotor rotor
+The rotor at the current node in the linked list.
+RotorList next
+The next RotorList node.
+RotorList previous
+The previous RotorList node.
+Methods:
+RotorList(Rotor rotor)
+Constructs the current RotorList node for the given Rotor rotor, and initializes the next and previous RotorList nodes to null.
+void addNext(Rotor nextRotor)
+Adds a new RotorList node with the given Rotor nextRotor to the end of the linked list.
+Sets the next and previous RotorList nodes for the new RotorList node.
+
+EnigmaK_GUI Class:
+Class Description (no implementation details):
+EnigmaK_GUI is the front-end of Enigma and handles all interaction with users. This class creates the wiring for the rotors, entrywheel, and reflector, replicating the wiring in Enigma model K. The class takes the user inputs that defines the order of the rotors as well as their positions, along with the position of the reflector. It also takes the name of the .txt file to be encrypted, and outputs the ciphertext to the output file whose name is defined by the user. 
+See the following links for more details on Enigma rotors and the Enigma K model:
+https://en.wikipedia.org/wiki/Enigma_rotor_details
+https://www.cryptomuseum.com/crypto/enigma/wiring.htmhttps://www.cryptomuseum.com/crypto/enigma/wiring.htm
+http://users.telenet.be/d.rijmenants/en/enigmatech.htm#wiringdiagram
+Imports:
+java.util.*
+java.io.*
+Fields:
+ALPHABET_SIZE
+A constant variable that represents the size of the alphabet being used.
+Methods:
+main
+Initializes the ArrayList<Character> for all of Enigma K’s wheels, takes the user input for the order of the rotors and positions for both the rotors and reflector, takes the user input for both .txt files names (the input file with the phrase and the output file), creates the Enigma object for the given rotors and settings, encrypted the phrase, and outputs the cipher to the new output file.
+
+TextConvertor Class:
+Class Description (no implementation details):
+TextConverter takes a .txt file and converts its contents into an easily manipulated data structure that can then be pushed through the EnigmaK machine. 
+Imports:
+java.util.*
+java.io.*
+Fields:
+N/A
+Methods:
+Queue<Character> convertToQueue(String txtFileName)
+Takes a .txt file as a parameter, scans its contents, and returns a queue containing each letter in the file. All letters are changed to lowercase and spaces, symbols, and numbers are ignored. 
+
+RotorPicker Class:
+Class Description (no implementation details):
+The RotorPicker class works with the main method in the GUI to determine the rotors used and their starting positions in any given run. 
+Imports:
+java.util.*
+Fields:
+ALPHABET_SIZE
+A constant variable that represents the size of the alphabet being used.
+int rotorsAmount
+	Number of rotors for that run
+ArrayList<ArrayList<Character>> allRotors
+	All the rotors initialized in main.
+RotorList chosenRotors
+	A linked list of all the rotors chosen for this run of the enigma machine.
+RotorList firstRotor
+	The first rotor in the sequence. Important because it iterates at different speeds than the other rotors.
+
+Methods:
+RotorPicker(int rotorsAmount)
+	Initializes a new rotor picker for the given amount of rotors.
+int getRotorsAmount()
+Returns the number of rotors.
+
+void setAllRotors(ArrayList<ArrayList<Character>> allRotors)
+Sets all the rotors for a given run all at once..
+RotorList userRotorSetter()
+Uses a scanner in combination with the methods outlined in rotor picker to set the number of rotors in the given run.
+
+
