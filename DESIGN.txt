@@ -86,7 +86,7 @@ Class Description (no implementation details):
 EnigmaK_GUI is the front-end of Enigma and handles all interaction with users. This class creates the wiring for the rotors, entrywheel, and reflector, replicating the wiring in Enigma model K. The class takes the user inputs that defines the order of the rotors as well as their positions, along with the position of the reflector. It also takes the name of the .txt file to be encrypted, and outputs the ciphertext to the output file whose name is defined by the user. 
 See the following links for more details on Enigma rotors and the Enigma K model:
 https://en.wikipedia.org/wiki/Enigma_rotor_details
-https://www.cryptomuseum.com/crypto/enigma/wiring.htmhttps://www.cryptomuseum.com/crypto/enigma/wiring.htm
+https://www.cryptomuseum.com/crypto/enigma/wiring.htm 
 http://users.telenet.be/d.rijmenants/en/enigmatech.htm#wiringdiagram
 Imports:
 java.util.*
