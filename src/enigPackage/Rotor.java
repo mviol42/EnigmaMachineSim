@@ -29,11 +29,6 @@ public class Rotor {
 		this.justRotated = false;
 	}
 
-	// Returns the wiring
-	public ArrayList<Character> getRotorMap() {
-		return this.wiring;
-	}
-
 	// Returns position.
 	public int getPosition() {
 		return this.position;
@@ -50,9 +45,10 @@ public class Rotor {
 		}
 	}
 
-	// Forward encrypts the given character currChar by setting integer adjustedPos to the index value of
-	// currChar plus position
-	// (subtracts ascii values from currChar to have a letter in a indexed alphabet where ‘a’ has an index of 0)
+	// Forward encrypts the given character currChar by setting integer
+	// adjustedPos to the index value of currChar plus position
+	// (subtracts ascii values from currChar to have a letter in a
+	// indexed alphabet where ‘a’ has an index of 0)
 	// and sending the resulting adjustedPos through ArrayList wiring.
 	public char forwardEncryptChar(char currChar) {
 		int adjustedPos = ((int) currChar - (int) 'a') + this.position;
@@ -67,8 +63,9 @@ public class Rotor {
 		return encryptedChar;
 	}
 
-	// Backward encrypts the given character currChar by subtracting position from the index of the current character
-	// in ArrayList wiring and sending the resulting integer adjustedPos through wiring.
+	// Backward encrypts the given character currChar by subtracting position from the
+	// index of the current character in ArrayList wiring and sending the resulting
+	// integer adjustedPos through wiring.
 	public char backwardEncryptChar(char currChar) {
 		int adjustedPos = this.wiring.indexOf(currChar) - this.position;
 		char encryptedChar;
@@ -83,7 +80,8 @@ public class Rotor {
 		return encryptedChar;
 	}
 
-	// Rotates the rotor by increasing position by 1. If the resulting position exceeds ALPHABET_SIZE - 1
+	// Rotates the rotor by increasing position by 1. If the resulting position exceeds
+	// ALPHABET_SIZE - 1
 	// (representing ALPHABET_SIZE where ‘a’ is at index 0), the method sets the position to 0.
 	// Sets boolean justRotated to true.
 	public int rotate() {

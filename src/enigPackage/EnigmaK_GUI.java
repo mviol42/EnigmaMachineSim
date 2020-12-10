@@ -3,9 +3,10 @@
 // Source: Implementation Details Doc v_01.2
 // Description: Temporary front end that replicates Enigma K/Enigma G
 // EnigmaK_GUI is the front-end of Enigma and handles all interaction with users.
-// This class creates the wiring for the rotors, entrywheel, and reflector, replicating the wiring in Enigma model K.
-// The class takes the user inputs that defines the order of the rotors as well as their positions,
-// along with the position of the reflector. It also takes the name of the .txt file to be encrypted,
+// This class creates the wiring for the rotors, entrywheel, and reflector, replicating the wiring
+// in Enigma model K. The class takes the user inputs that defines the order of the rotors as well
+// as their positions, along with the position of the reflector. It also takes the name of the
+// .txt file to be encrypted,
 // and outputs the ciphertext to the output file whose name is defined by the user.
 // https://en.wikipedia.org/wiki/Enigma_rotor_details
 // https://www.cryptomuseum.com/crypto/enigma/wiring.htm
@@ -24,8 +25,9 @@ public class EnigmaK_GUI {
 	private static final int ALPHABET_SIZE = 26;
 	
 	// Initializes the ArrayList<Character> for all of Enigma K’s wheels,
-	// takes the user input for the order of the rotors and positions for both the rotors and reflector,
-	// takes the user input for both .txt files names (the input file with the phrase and the output file),
+	// takes the user input for the order of the rotors and positions for both the rotors and
+	// reflector, takes the user input for both .txt files names (the input file with the
+	// phrase and the output file),
 	// creates the Enigma object for the given rotors and settings, encrypted the phrase,
 	// and outputs the cipher to the new output file.
 	public static void main(String[] args) throws FileNotFoundException {
@@ -34,7 +36,7 @@ public class EnigmaK_GUI {
 		//		
 		// Rotor I aka 01:
 		// LPGSZMHAEOQKVXRFYBUTNICJDW 
-		ArrayList<Character> rotorArrList_00 = new ArrayList<Character>()
+		ArrayList<Character> rotorArrList_00 = new ArrayList<>()
 		{{
 			add('l');
 			add('p');
@@ -66,7 +68,7 @@ public class EnigmaK_GUI {
 		
 		// Rotor II aka 02:
 		// SLVGBTFXJQOHEWIRZYAMKPCNDU  
-		ArrayList<Character> rotorArrList_01 = new ArrayList<Character>()
+		ArrayList<Character> rotorArrList_01 = new ArrayList<>()
 		{{
 			add('s');
 			add('l');
@@ -98,7 +100,7 @@ public class EnigmaK_GUI {
 
 		// Rotor III aka 03:
 		// CJGDPSHKTURAWZXFMYNQOBVLIE 
-		ArrayList<Character> rotorArrList_02 = new ArrayList<Character>()
+		ArrayList<Character> rotorArrList_02 = new ArrayList<>()
 		{{
 			add('c');
 			add('j');
@@ -130,7 +132,7 @@ public class EnigmaK_GUI {
 		
 		// ETW aka Entry Wheel:
 		// QWERTZUIOASDFGHJKPYXCVBNML
-		ArrayList<Character> ETW = new ArrayList<Character>()
+		ArrayList<Character> ETW = new ArrayList<	>()
 		{{
 			add('q'); // a
 			add('w'); // b
@@ -162,7 +164,7 @@ public class EnigmaK_GUI {
 		
 		// UKW aka Reflector:
 		// IMETCGFRAYSQBZXWLHKDVUPOJN 
-		ArrayList<Character> UKW = new ArrayList<Character>()
+		ArrayList<Character> UKW = new ArrayList<>()
 		{{
 			add('i');
 			add('m');
@@ -192,7 +194,7 @@ public class EnigmaK_GUI {
 			add('n');
 		}};
 
-		ArrayList<ArrayList<Character>> allRotors = new ArrayList<ArrayList<Character>>()
+		ArrayList<ArrayList<Character>> allRotors = new ArrayList<>()
 		{{
 			add(rotorArrList_00);
 			add(rotorArrList_01);
@@ -220,7 +222,8 @@ public class EnigmaK_GUI {
 			}
 		}
 		
-		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), inputFile, reflector, new Rotor(ETW, 0));
+		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), inputFile, reflector,
+				new Rotor(ETW, 0));
 
 		char[] cipher = myEnigma.encryptor();
 	    for (char currChar : cipher) {

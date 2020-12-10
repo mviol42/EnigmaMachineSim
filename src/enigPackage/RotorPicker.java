@@ -20,21 +20,6 @@ public class RotorPicker {
 		this.rotorsAmount = rotorsAmount;
 	}
 
-//	// Sets the rotor amount to the given int. If the rotor amount is out of bounds for the number of rotors we have
-//	// (hard coded that 0 < n <6), it will set the rotor amount to -1.
-//	public void setRotorsAmount(int rotorsAmount) {
-//		if (rotorsAmount > 0 && rotorsAmount < 6) {
-//			this.rotorsAmount = rotorsAmount;
-//		} else {
-//			this.rotorsAmount = -1;
-//		}
-//	}
-
-	// Returns the number of rotors.
-	public int getRotorsAmount() {
-		return this.rotorsAmount;
-	}
-
 	// Sets all the rotors for a given run all at once.
 	public void setAllRotors(ArrayList<ArrayList<Character>> allRotors) {
 		this.allRotors = allRotors;
@@ -43,9 +28,7 @@ public class RotorPicker {
 	// Uses scanner to let the user set their rotors.
 	public RotorList userRotorSetter() {
 		Scanner inputter = new Scanner(System.in);
-		ArrayList<Integer> tempRotorsArr = new ArrayList<Integer>();
-		
-//		System.out.println("You can choose " + this.rotorsAmount + " rotors out of a selection of 1-" + this.allRotors.size() + ".");
+		ArrayList<Integer> tempRotorsArr = new ArrayList<>();
 		System.out.println("Choose the order of the " + this.rotorsAmount + " rotors");
 		int i = 0;
 		while (i < this.rotorsAmount) {
@@ -58,7 +41,8 @@ public class RotorPicker {
 			}
 			
 			if (!tempRotorsArr.contains(chosenRotor)) {
-				System.out.print("Choose the start position (1-" + ALPHABET_SIZE + ") for rotor #" + (chosenRotor + 1) + ": ");
+				System.out.print("Choose the start position (1-" + ALPHABET_SIZE + ") for rotor #"
+						+ (chosenRotor + 1) + ": ");
 				int rotorPos;
 				if (inputter.hasNextInt()) {
 					rotorPos = inputter.nextInt() - 1;
@@ -67,9 +51,11 @@ public class RotorPicker {
 				}
 				System.out.println();
 				
-				if ((chosenRotor > -1 && chosenRotor < 5) && (rotorPos > -1 && rotorPos < (ALPHABET_SIZE - 1))) {
+				if ((chosenRotor > -1 && chosenRotor < 5) && (rotorPos > -1 &&
+						rotorPos < (ALPHABET_SIZE - 1))) {
 					if (i == 0) {
-						this.chosenRotors = new RotorList(new Rotor(allRotors.get(chosenRotor), rotorPos));
+						this.chosenRotors = new RotorList(
+								new Rotor(allRotors.get(chosenRotor), rotorPos));
 						this.firstRotor = this.chosenRotors;
 					} else {
 						this.chosenRotors.addNext(new Rotor(allRotors.get(chosenRotor), rotorPos));
@@ -77,7 +63,8 @@ public class RotorPicker {
 					
 					tempRotorsArr.add(chosenRotor);
 				} else {
-					System.out.println("Please choose a rotor between 1-" + this.allRotors.size() + " with a position 1-" + ALPHABET_SIZE + ".");
+					System.out.println("Please choose a rotor between 1-" + this.allRotors.size()
+							+ " with a position 1-" + ALPHABET_SIZE + ".");
 				}
 				
 				i++;
