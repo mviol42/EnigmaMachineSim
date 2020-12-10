@@ -10,4 +10,4 @@ It will also work for any file you plug in.
 Set the rotors to something within the range of acceptable values when prompted.
 Once all the rotors are set and you have your input file, it will automatically put the output in src/resources/output.txt.
 To decrypt the message, copy and paste that text into a new .txt file, point the program to it and enter the same rotor settings you had before, and watch as magical enigma things happen! 
-The text in src/resources/output.txt will be your decrypted file!
+The text in src/resources/output.txt will be your encrypted/decrypted file!
