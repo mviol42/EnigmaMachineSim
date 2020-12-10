@@ -227,11 +227,10 @@ public class EnigmaK_GUI {
 		}
 
 		System.out.println();
-      	System.out.print("Input file name: ");
-      	String inputFile = inputter.next();
+      	String inputFile = TextConvertor.inputFileTest(inputter);
      	System.out.println();
-      	System.out.print("output file name: ");
-      	String outputFile = inputter.next();
+     	String outputFile = TextConvertor.outputFile(inputter);
+      	System.out.println();
 		PrintStream output = new PrintStream(new File(outputFile));
 		Enigma myEnigma = new Enigma(rotorPicker.userRotorSetter(), inputFile, reflector, new Rotor(ETW, 0));
 

@@ -10,8 +10,9 @@ import java.util.*;
 import java.io.*;
 
 public class TextConvertor {
-	// Takes a .txt file as a parameter, scans its contents, and returns a queue containing each letter in the file.
-	// All letters are changed to lowercase and spaces, symbols, and numbers are ignored.
+	// Takes a .txt file as a parameter, then it scans its contents, and returns a queue 
+	// containing each letter in the file. All letters are converted to lowercase. Spaces, 
+	// numbers and symbols are ignored.
 	public static Queue<Character> convertToQueue(String txtFileName) throws FileNotFoundException {
 		Scanner input = new Scanner(new File(txtFileName));
 		Queue<Character> baseText = new LinkedList<>();
@@ -28,4 +29,27 @@ public class TextConvertor {
 		}
 		return baseText;
 	}
+	// This method takes a Scanner as a parameter and asks for the .txt file that the user would like 
+	// to encrypt. If the file does not exist then they will be asked to enter a different file. Once
+	// a usable file  is found then a string of the file name is returned.
+	public static String inputFileTest(Scanner input) throws FileNotFoundException {
+		System.out.print("What is the name of the input file: ");
+		String inputFile = input.next();
+		File temp = new File(inputFile);
+		if (temp.exists()) {
+			return inputFile;
+		} else {
+			System.out.println(inputFile + "does not exist.");
+			System.out.println();
+			return inputFileTest(input);
+		}
+	}
+	// This method asks the user for the name of the file that the encrypted message will be outputted
+	// to. It is converted into a .txt file and the full file name is returned as a string.
+	public static String outputFile(Scanner input) {
+		System.out.print("What is the name of the output file without the extension: ");
+		String outputFile = input.next() + ".txt";
+		return outputFile;
+	}
+
 }

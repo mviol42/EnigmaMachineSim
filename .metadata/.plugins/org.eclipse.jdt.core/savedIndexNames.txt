@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\agite\git\EnigmaMachineSim\.metadata\.plugins\org.eclipse.jdt.core
+173981809.index
