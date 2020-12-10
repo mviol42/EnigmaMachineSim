@@ -1,6 +1,6 @@
 # EnigmaMachineSim
 
-Link to YouTube video:https://www.youtube.com/watch?v=NfZlgopj3wI
+Link to YouTube video: https://youtu.be/8zw7RAh-rro
 
 Link to implementation docs: https://drive.google.com/drive/folders/1efcE5h0GWOXAlgVWJdeC05LQ7fcBfA_q?usp=sharing
 
